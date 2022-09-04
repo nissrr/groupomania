@@ -1,0 +1,59 @@
+.header{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-image: conic-gradient(var(--primary-color) 0 0) fill 0/0/0 100vmax;
+    width: 95%;
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--background-color);
+    padding-block: 10px;
+    overflow: hidden;
+}
+.header__logo{
+    display: flex;
+    gap: 3px;
+    cursor: pointer;
+}
+@media (max-width: 540px){
+    .header__logo{flex-direction: column;align-items: flex-end; gap:0}
+    .header__logo--text{margin-top: -8px;}
+}
+.header__logo--image{
+    height: 30px;
+}
+.header__logo--text{
+    color: var(--body-color);
+    line-height: 30px;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 300;
+    white-space: nowrap;
+}
+@media (max-width: 375px){
+    .header__logo--image{height: 20px;}
+    .header__logo--text{line-height: 20px;font-size: 12px;}
+}
+.header__actions{
+    display: flex;
+}
+.header__actions input{
+    margin-left: 3px;
+}
+.header__actions a, .header__actions div{
+    cursor: pointer;
+    transition: transform .15s ease-in-out;
+}
+.header__actions a:hover,.header__actions div:hover{
+    transform: scale(1.1);
+}
+.header__actions svg{
+    width: 40px;
+    aspect-ratio: 1;
+}
+.header__actions a:hover,.header__actions div:hover, .header__actions--active{
+    border-image: conic-gradient(var(--secondary-color) 0 0) fill 0/0/100vmax 0;
+    color: var(--tertiary-color);
+}

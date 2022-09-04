@@ -1,0 +1,17 @@
+.loginpage-logo{
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loginpage-logo-image{
+    position: relative;
+    width: 95%;
+    object-fit: cover;
+}
+.loginpage-theme-input{
+    margin: 30px auto;
+    display: block;
+}

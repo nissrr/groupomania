@@ -1,0 +1,103 @@
+.login, .create-post, .user-details{
+    background-color: var(--background-color);
+    box-shadow: 2px 2px 15px var(--shadow-color);
+    border-radius: 15px;
+    overflow: hidden;
+    width: 95%;
+    margin-inline: auto;
+    margin-top: 20px;
+}
+.login-title{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    font-size: clamp(0.25rem, 1vw + 0.5rem, 1.25rem);
+}
+.login-title__title{
+    flex: 1;
+    height: 60px;
+    line-height: 60px;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    font-weight: 900;
+}
+.inactive-login-title{
+    --shadow-x: -15px;
+}
+.inactive-signup-title{
+    --shadow-x: 15px;
+}
+.inactive-login-title,
+.inactive-signup-title{
+    box-shadow: inset var(--shadow-x) -15px 15px -15px var(--shadow-color);
+    cursor: pointer;
+    font-weight: 300;
+    background-color: var(--body-color);
+    color: var(--tertiary-color);
+    transition: all .2s ease-in-out;
+}
+.login-form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+}
+.login-form label:last-of-type{
+    margin-top: 20px;
+}
+.login-form input{
+    background-color: var(--background-color);
+    color: var(--tertiary-color);
+    height: 40px;
+    border-radius: 20px;
+    padding-inline: 20px;
+    border: 2px solid var(--tertiary-color);
+}
+.login-form input:valid{
+    border: 2px solid var(--success-color);
+}
+.login-form button:first-of-type{
+    margin-top: 50px;
+}
+.error-message,.success-message{
+    position: relative;
+    color: var(--message-color);
+    font-weight: 600;
+    padding-left: 30px;
+}
+.error-message::before,.success-message::before{
+    margin-inline: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.error-message::before{
+    content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path stroke="rgb(253, 45, 1)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13.253 5.98 12 13.5l-1.253-7.52a1.27 1.27 0 1 1 2.506 0Z"/><circle cx="12" cy="19" r="1" stroke="rgb(253, 45, 1)" stroke-width="2"/></svg>');
+}
+.success-message::before{
+    content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"  fill="none" viewBox="0 0 24 24"><path stroke="rgb(0, 176, 107)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 14L9 18L19 8"/></svg>');
+}
+.error-message{
+    --message-color: var(--primary-color);
+}
+.success-message{
+    --message-color: var(--success-color);
+}
+.password-input{
+    position: relative;
+}
+.password-input svg{
+    position: absolute;
+    right: 5px;
+    width: 36px;
+    margin-block: 2px;
+    cursor: pointer;
+}
+.password-input svg:hover{
+    color: var(--primary-color)
+}
+.password-input input{
+    width: 100%;
+}

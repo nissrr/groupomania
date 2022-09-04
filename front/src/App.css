@@ -1,0 +1,71 @@
+.profile-go-back{
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.profile-go-back__button{
+    width: 50px;
+    transition: transform .2s ease-in-out;
+}
+.profile-go-back__button:hover{
+    transform: scale(1.1);
+    filter: drop-shadow(2px 2px 2px var(--shadow-color));
+}
+.profile-go-back__text{
+    width: 0;
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: width .3s ease-in-out;
+}
+.profile-go-back:hover .profile-go-back__text{
+    width: 85px;
+    transition: width .3s ease-in-out .1s;
+}
+.loader{
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.loader__logo{
+    width: 100%;
+    color: var(--primary-color);
+    margin-block: 30px;
+    animation: loading 5s ease-out infinite;
+}
+.loader__text{
+    font-size: 1.5em;
+    animation: loading-text 2.5s steps(16) infinite alternate;
+    overflow: hidden;
+    white-space: nowrap;
+}
+@keyframes loading {
+    0%{transform: rotate(0);}
+    8%{transform: rotate(-10deg);}
+    75%, 100%{transform: rotate(720deg);}
+}
+@keyframes loading-text {
+    0%{width: 0ch;}
+    70%, 100%{width: 13ch;}
+}
+.error404{
+    text-align: center;
+    margin-block: 30px;
+}
+.error404 img{
+    width: 100%;
+}
+.display-error{
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.display-error p{
+    color: var(--primary-color);
+    font-size: 1.1em;
+}

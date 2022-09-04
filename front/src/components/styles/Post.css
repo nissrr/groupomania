@@ -1,0 +1,185 @@
+.post{
+    width: 95%;
+    margin: 20px auto;
+    background-color: var(--background-color);
+    box-shadow: 2px 2px 15px var(--shadow-color);
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    animation: post-appear .4s ease-in-out both;
+}
+@keyframes post-appear{
+    from{transform: translateY(30px); opacity: 0}
+    to{transform: translateY(0); opacity: 1}
+}
+.post__user{
+    background-color: var(--secondary-color);
+    padding: 5px 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+.post__user:hover{
+    color: black;
+}
+.post__user span:first-child{
+    font-weight: 800;
+}
+.post__user span:last-of-type:not(:first-child)::before{
+    content: '-';
+    padding-inline: 5px;
+}
+.post__user div:last-child{
+    font-weight: 300;
+    font-style: italic;
+}
+.post__user div:last-child::first-letter{
+    text-transform: capitalize;
+}
+.post__image{
+    width: 100%;    
+    height: auto;
+}
+.post__text{
+    font-weight: 300;
+    font-size: 20px;
+    padding: 5px 15px;
+}
+.post__text__modified{
+    font-weight: 300;
+    font-style: italic;
+    font-size: 15px;
+    margin-left: 1ch;
+}
+.post__text--userlikes{
+    font-style: italic;
+    cursor: pointer;
+}
+.post__text--userlikes--inOneLign{
+    height: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.post__text--userlikes--name{
+    font-weight: 500;
+}
+.post__likes-comments-container{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    line-height: 1rem;
+    margin-bottom: 10px;
+}
+.post__text--comments{
+    min-width: max-content;
+    margin-left: auto;
+    cursor: pointer;
+}
+.post__footer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-top: 1px solid var(--tertiary-color);
+    padding-block: 5px;
+}
+.post__footer:not(:last-child){
+    border-bottom: 1px solid var(--tertiary-color);
+}
+.post__like{    
+    color: var(--like-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    cursor: pointer;
+    transition: flex .2s ease-in-out;
+}
+.post__like:hover{
+    flex: 2;
+    transition: flex .2s ease-in-out;
+}
+.post__like--heart{
+    width: 35px;
+    fill: none;
+}
+.post__like--number{
+    font-size: 25px;
+    margin-right: 5px;
+}
+.liked{
+    --like-color: var(--primary-color);
+    font-weight: 800;
+}
+.liked .post__like--heart{
+    fill: var(--primary-color)
+}
+.post__like:not(.liked){
+    --like-color: var(--tertiary-color)
+}
+.post__action{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    flex: 1;
+    border-left: 1px solid var(--tertiary-color);
+    position: relative;
+    overflow: hidden;
+    transition: flex .2s ease-in-out;
+}
+.post__action:hover{
+    flex: 2;
+    transition: flex .2s ease-in-out;
+}
+.post__action--icon{
+    text-align: center;
+}
+.post__action--icon svg{
+    width: 35px;
+}
+.post__action--text{
+    display: inline-flex;
+    width: 0;
+    color: var(--tertiary-color);
+    font-weight: initial;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: width .3s ease-in-out;
+}
+.post__action:hover .post__action--text{
+    width: 84px;
+    transition: width .3s ease-in-out;
+}
+.post__action:hover .post__action--text.modify{
+    width: 61px;
+}
+.post__action:hover .post__action--text.delete{
+    width: 74px;
+}
+.post__like:hover .unlike{
+    width: 120px;
+}
+.post__like:hover .like{
+    width: 43px;
+}
+.post__confirmation-message{
+    position: absolute;
+    background-color: var(--background-color);
+    border-radius: 15px;
+    box-shadow: 0 0 0 100vmax var(--shadow-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.post__confirmation-message__text{
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+.post__confirmation-message__response{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}

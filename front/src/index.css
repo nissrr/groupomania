@@ -1,0 +1,92 @@
+@import url(https://fonts.bunny.net/css?family=lato:100,100i,300,300i,400,400i,700,700i,900,900i);
+
+:root{
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+}
+/* Reset */
+
+*, *::before, *::after, h1{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+
+/* Global style */
+
+body{
+    width: min(100vw, 700px);
+    margin-inline: auto;
+    background-color: var(--background-color);
+}
+*:focus-visible{    
+    outline: var(--primary-color) solid;
+}
+button{
+    height: 40px;
+    line-height: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color: transparent;
+    color: var(--tertiary-color);
+    text-decoration: underline;
+    cursor: pointer;
+    transition: transform .2s ease-in-out;
+    padding-inline: 20px;
+}
+button.accent{    
+    background-color: var(--accent-button-color);
+    color: var(--background-color);
+    font-weight: 700;
+    text-decoration: none;
+}
+button:not(.accent):hover{
+    transform: scale(1.025);
+    text-shadow: 1px 1px 1px var(--shadow-color);
+}
+button.accent:hover{
+    transform: scale(1.025);
+    box-shadow: 2px 2px 2px var(--shadow-color);
+}
+button.accent.inactive{
+    background-color: var(--secondary-color);
+}
+button.accent.inactive{
+    transform: none;
+    box-shadow: none;
+    cursor: default;
+}
+.themeInput{
+    --s:36px;
+    
+    height: var(--s);
+    padding: calc(var(--s)/10);
+    box-sizing: content-box;
+    aspect-ratio: 2;
+    border-radius: var(--s);
+    background:
+      radial-gradient(farthest-side,var(--primary-color) 97%,#0000) 
+       left/var(--s) 100% content-box no-repeat,
+      var(--secondary-color);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    transition: .3s;
+}
+.themeInput::before{
+    content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="36" fill="none" viewBox="0 0 24 24"><path stroke="white" stroke-linecap="round" stroke-width="2" d="M12 4.5V3m0 18v-1.5m9-7.5h-1.5m-15 0H3m14.303-5.303l1.061-1.061M5.636 18.364l1.06-1.06m11.668 1.06l-1.06-1.06M6.696 6.696L5.636 5.636M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>');
+}
+.themeInput::after{
+    content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" width="36" viewBox="0 0 24 24"><path stroke="rgb(41, 41, 49)" stroke-linejoin="round" stroke-width="2" d="M20 14.12A7.78 7.78 0 019.88 4a7.782 7.782 0 002.9 15A7.782 7.782 0 0020 14.12z"/></svg>');
+}
+.themeInput:checked{
+    background-position: right;
+}

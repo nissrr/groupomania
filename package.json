@@ -1,0 +1,13 @@
+{
+    "name": "p7-groupomania-back",
+    "version": "1.0.0",
+    "description": "Ce projet consiste a crée un réseau social d'entreprise permettant de faciliter les interactions entre collègues.",
+    "scripts": {
+    },
+    "dependencies": {
+        "p7-groupomania-front": "file:front",
+        "p7-groupomania-back": "file:back"
+    },
+    "author": "ROINZO Anis",
+    "license": "ISC"
+}

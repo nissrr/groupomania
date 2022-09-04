@@ -1,0 +1,167 @@
+.create-post{
+    padding: 15px;
+    position: relative;
+    overflow: visible;
+}
+.create-comment{
+    width: 95%;
+    margin: 20px auto;
+    position: relative;
+}
+.modify-comment{
+    width: 95%;
+    margin-inline: auto;
+    background-color: var(--background-color);
+    border-radius: 15px;
+    box-shadow: 2px 2px 15px var(--shadow-color);
+    padding: 2%;
+    position: relative;
+}
+.create-comment__text-actions{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+.create-comment__textarea{
+    flex-grow: 2;
+}
+.create-post__grow-wrap{
+    display: grid;
+    margin-bottom: 8px;
+}
+.create-post__grow-wrap::after{
+    content: attr(data-replicated-value) " ";
+    white-space: pre-wrap;
+    visibility: hidden;
+}
+.create-post__grow-wrap > textarea{
+    resize: none;
+    overflow: hidden;
+}
+.create-post__grow-wrap > textarea:focus-visible{
+    outline: var(--primary-color) solid;
+}
+.create-post__grow-wrap > textarea,
+.create-post__grow-wrap::after{
+    border-radius: 15px;
+    border: 2px solid var(--tertiary-color);
+    background-color: var(--background-color);
+    color: var(--tertiary-color);
+    padding: 5px 20px;
+
+    grid-area: 1/1/2/2;
+}
+.create-post__actions{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+.create-post__actions--image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.create-post__actions--image:hover svg{
+    transform: scale(1.025);
+    filter: drop-shadow(2px 2px 2px var(--shadow-color));
+}
+.create-post__actions--image svg{
+    width: 42px;
+}
+.create-post__actions--image--text{    
+    display: inline-flex;
+    width: 0;
+    line-height: 1.2em;
+    overflow: hidden;
+    white-space: pre;
+    text-align: end;
+    transition: width .3s ease-in-out;
+}
+.create-post__actions--image:hover .create-post__actions--image--text{
+    width: 83px;
+    transition: width .3s ease-in-out .1s;
+}
+.create-post__actions input{
+    display: none;
+}
+.create-post__image{
+    position: relative;
+    margin: 10px auto 10px;
+    width: min(400px, 95%);
+    display: block;
+    animation: image-appear .5s ease-in-out both;
+}
+.create-post__image--container{
+    overflow: hidden;
+    position: relative;
+}
+@keyframes image-appear{
+    from{transform: translateY(100%);}
+    to{transform: translateY(0);}
+}
+.create-post__image--altText{
+    width: min(390px, 92%);
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.create-post__image--altText input{ 
+    width: 100%;   
+    background-color: var(--background-color);
+    color: var(--tertiary-color);
+    height: 40px;
+    border-radius: 20px;
+    padding-inline: 20px 40px;
+    border: 2px solid var(--tertiary-color);
+    animation: input-appear .2s ease-in-out both .3s;
+}
+@keyframes input-appear{
+    from{transform: translateY(150%);}
+    to{transform: translateY(0);}
+}
+.create-post__image--altText button{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 0;
+    padding: 0;
+    display: inline-flex;
+    animation: input-appear .2s ease-in-out both .3s;
+}
+.create-post__image--altText button:hover{
+    color: var(--primary-color)
+}
+.create-post__image--altText button svg{
+    width: 30px;
+}
+.create-post__image img{
+    width: 100%;
+}
+.create-post__image--delete{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 40px;
+    stroke-width: 3px;
+    background-color: var(--background-color);
+    border-radius: 50%;
+    border: 3px solid var(--background-color);
+    cursor: pointer;
+}
+.altText-explanation{
+    inset: 5%;
+    z-index: 11;
+    padding: 15px;
+    gap: 2px;
+    white-space: pre-line;
+    font-size: .8em;
+}
+@media (min-width: 700px){
+    .altText-explanation{inset: 12%;}
+}
+@media (min-width: 400px){
+    .altText-explanation{gap: 15px;font-size: 1em;}
+}
